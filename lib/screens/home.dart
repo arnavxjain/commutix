@@ -1,5 +1,6 @@
 import 'package:blur/blur.dart';
 import 'package:commutix/widgets/hoverView.dart';
+import 'package:figma_squircle/figma_squircle.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -140,7 +141,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF141414),
+      backgroundColor: const Color(0xFF141414),
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -155,7 +156,32 @@ class _HomePageState extends State<HomePage> {
               },
               controller: pageController,
 
-              children: [],
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 150),
+                  padding: EdgeInsets.symmetric(horizontal: 25),
+                  child: Column(
+                    children: [
+                      _titleTextWithLink("Existing Routes", "See All"),
+                      Row(
+                        children: [
+                          Container(
+                            decoration: ShapeDecoration(
+                              shape: SmoothRectangleBorder(
+                                borderRadius: SmoothBorderRadius(
+                                  cornerRadius: 10,
+                                  cornerSmoothing: 0.9,
+                                ),
+                              ),
+                              image: Net
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                )
+              ],
 
             ),
             HoverView(context),
@@ -163,6 +189,52 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+    );
+  }
+
+  _titleText(String title) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          title,
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w700,
+            fontSize: 22,
+            letterSpacing: -1
+          ),
+        ),
+      ],
+    );
+  }
+
+  _titleTextWithLink(String title, String linkText) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          title,
+          style: const TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.w700,
+              fontSize: 22,
+              letterSpacing: -1
+          ),
+        ),
+        GestureDetector(
+          onTap: () {},
+          child: Text(
+            linkText,
+            style: TextStyle(
+              color: Color(0xFF0090FF),
+              fontWeight: FontWeight.w600,
+              letterSpacing: -1,
+              fontSize: 17
+            ),
+          ),
+        )
+      ],
     );
   }
 }
