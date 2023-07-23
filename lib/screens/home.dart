@@ -158,8 +158,8 @@ class _HomePageState extends State<HomePage> {
 
               children: [
                 Container(
-                  margin: EdgeInsets.only(top: 150),
-                  padding: EdgeInsets.symmetric(horizontal: 25),
+                  margin: const EdgeInsets.only(top: 150),
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
                   child: Column(
                     children: [
                       _titleTextWithLink("Existing Routes", "See All"),
@@ -173,7 +173,9 @@ class _HomePageState extends State<HomePage> {
                                   cornerSmoothing: 0.9,
                                 ),
                               ),
-                              image: Net
+                              image: const DecorationImage(
+                                image: AssetImage("lib/line1.png")
+                              )
                             ),
                           )
                         ],
@@ -226,7 +228,7 @@ class _HomePageState extends State<HomePage> {
           onTap: () {},
           child: Text(
             linkText,
-            style: TextStyle(
+            style: const TextStyle(
               color: Color(0xFF0090FF),
               fontWeight: FontWeight.w600,
               letterSpacing: -1,
