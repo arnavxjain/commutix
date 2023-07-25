@@ -284,6 +284,119 @@ class _HomePageState extends State<HomePage> {
 
                       const SizedBox(height: 30),
                       _titleText("Fare Calculator"),
+                      const SizedBox(height: 20),
+                      Container(
+                        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                        width: MediaQuery.of(context).size.width,
+                        decoration: ShapeDecoration(
+                          color: const Color(0xFF222222),
+                          shape: SmoothRectangleBorder(
+                            borderRadius: SmoothBorderRadius(
+                              cornerRadius: 20,
+                              cornerSmoothing: 0.9,
+                            ),
+                          ),
+                        ),
+                        child: Column(
+                          children: [
+                            const Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Icon(CupertinoIcons.exclamationmark_triangle, color: Colors.grey, size: 15,),
+                                SizedBox(width: 4),
+                                Flexible(
+                                  child: Text("Note: All fares and prices are calculated over a particular conversion rate and might vary slightly at times.",
+                                    style: TextStyle(
+                                      overflow: TextOverflow.visible,
+                                      color: Colors.grey,
+                                      fontSize: 12
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                            SizedBox(height: 10),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Text("Departure",
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    letterSpacing: -1,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w600
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 30,
+                                  child: CupertinoButton(
+                                    color: const Color(0xFF333333),
+                                    padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                                    onPressed: () {},
+                                    child: const Row(
+                                      children: [
+                                        Text("Ghatkopar", style: TextStyle(fontSize: 15),),
+                                        SizedBox(width: 4),
+                                        Icon(CupertinoIcons.chevron_down, size: 15,)
+                                      ],
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                            const SizedBox(height: 13),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Text("Arrival",
+                                  style: TextStyle(
+                                      fontSize: 17,
+                                      letterSpacing: -1,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w600
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 30,
+                                  child: CupertinoButton(
+                                    color: const Color(0xFF333333),
+                                    padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                                    onPressed: () {},
+                                    child: const Row(
+                                      children: [
+                                        Text("Versova", style: TextStyle(fontSize: 15),),
+                                        SizedBox(width: 4),
+                                        Icon(CupertinoIcons.chevron_down, size: 15,)
+                                      ],
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                            const SizedBox(height: 13),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Text("Return Journey",
+                                  style: TextStyle(
+                                      fontSize: 17,
+                                      letterSpacing: -1,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w600
+                                  ),
+                                ),
+                                CupertinoSwitch(
+                                  onChanged: (x) {},
+                                  value: true,
+                                )
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+
+                      const SizedBox(height: 30),
+                      _titleText("Emergency Contacts"),
                     ],
                   ),
                 )
