@@ -57,7 +57,7 @@ dynamic superState = 0;
                           color: superState == 0 ? const Color(0xFF2094EF) : Colors.transparent,
 
                         ),
-                        width: 80,
+                        width: 60,
                         height: 3,
                       ),
                       CupertinoButton(
@@ -69,7 +69,7 @@ dynamic superState = 0;
                           });
                         },
                         padding: EdgeInsets.zero,
-                        child: Text("Your Feed", style: superState == 0 ? CBStyleSelected : CBStyle),
+                        child: Text("Travel", style: superState == 0 ? CBStyleSelected : CBStyle),
                       ),
                     ],
                   ),
@@ -81,7 +81,7 @@ dynamic superState = 0;
                           color: superState == 1 ? const Color(0xFF2094EF) : Colors.transparent,
 
                         ),
-                        width: 75,
+                        width: 60,
                         height: 3,
                       ),
                       CupertinoButton(
@@ -93,7 +93,7 @@ dynamic superState = 0;
                           });
                         },
                         padding: EdgeInsets.zero,
-                        child: Text("Discover", style: superState == 1 ? CBStyleSelected : CBStyle),
+                        child: Text("Map", style: superState == 1 ? CBStyleSelected : CBStyle),
                       ),
                     ],
                   ),
@@ -105,7 +105,7 @@ dynamic superState = 0;
                           color: superState == 2 ? const Color(0xFF2094EF) : Colors.transparent,
 
                         ),
-                        width: 34,
+                        width: 60,
                         height: 3,
                       ),
                       CupertinoButton(
@@ -163,23 +163,127 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     children: [
                       _titleTextWithLink("Existing Routes", "See All"),
+                      const SizedBox(height: 20),
                       Row(
                         children: [
-                          Container(
-                            decoration: ShapeDecoration(
-                              shape: SmoothRectangleBorder(
-                                borderRadius: SmoothBorderRadius(
-                                  cornerRadius: 10,
-                                  cornerSmoothing: 0.9,
-                                ),
+                          CupertinoButton(
+                            padding: EdgeInsets.zero,
+                            onPressed: () {},
+                            child: Container(
+                              clipBehavior: Clip.hardEdge,
+                              height: 140,
+                              width: MediaQuery.of(context).size.width/2-30,
+                              decoration: ShapeDecoration(
+                                  shape: SmoothRectangleBorder(
+                                    borderRadius: SmoothBorderRadius(
+                                      cornerRadius: 20,
+                                      cornerSmoothing: 0.9,
+                                    ),
+                                  ),
+                                  image: const DecorationImage(
+                                      image: AssetImage("lib/assets/line1.png"),
+                                      fit: BoxFit.fill
+                                  )
                               ),
-                              image: const DecorationImage(
-                                image: AssetImage("lib/line1.png")
-                              )
+                              child: Column(
+                                children: [
+                                  const Expanded(child: SizedBox(width: 10)),
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+                                    width: MediaQuery.of(context).size.width/2-20,
+                                    child: const Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text("Line 1",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 17,
+                                              fontWeight: FontWeight.w600,
+                                              letterSpacing: -1
+                                          ),
+                                        ),
+                                        SizedBox(height: 4),
+                                        Text("Ghatkopar → Versova",
+                                          style: TextStyle(
+                                              color: Colors.white24,
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.w600,
+                                              letterSpacing: -1
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ).frosted(
+                                      blur: 4,
+                                      frostColor: Colors.black,
+                                      frostOpacity: 1/10000000
+                                  )
+                                ],
+                              ),
                             ),
-                          )
+                          ),
+                          const SizedBox(width: 10),
+                          CupertinoButton(
+                            padding: EdgeInsets.zero,
+                            onPressed: () {},
+                            child: Container(
+                              clipBehavior: Clip.hardEdge,
+                              height: 140,
+                              width: MediaQuery.of(context).size.width/2-30,
+                              decoration: ShapeDecoration(
+                                  shape: SmoothRectangleBorder(
+                                    borderRadius: SmoothBorderRadius(
+                                      cornerRadius: 20,
+                                      cornerSmoothing: 0.9,
+                                    ),
+                                  ),
+                                  image: const DecorationImage(
+                                      image: AssetImage("lib/assets/line2a.png"),
+                                      fit: BoxFit.fill
+                                  )
+                              ),
+                              child: Column(
+                                children: [
+                                  const Expanded(child: SizedBox(width: 10)),
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+                                    width: MediaQuery.of(context).size.width/2-20,
+                                    child: const Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text("Line 2A",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 17,
+                                              fontWeight: FontWeight.w600,
+                                              letterSpacing: -1
+                                          ),
+                                        ),
+                                        SizedBox(height: 4),
+                                        Text("Anand Nagar → DN Nagar",
+                                          style: TextStyle(
+                                              color: Colors.white24,
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.w600,
+                                              letterSpacing: -1
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ).frosted(
+                                      blur: 4,
+                                      frostColor: Colors.black,
+                                      frostOpacity: 1/10000000
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
                         ],
-                      )
+                      ),
+
+                      const SizedBox(height: 30),
+                      _titleText("Fare Calculator"),
                     ],
                   ),
                 )
