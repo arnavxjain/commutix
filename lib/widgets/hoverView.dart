@@ -23,7 +23,7 @@ Widget HoverView(BuildContext context) {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const Text(
-              "mumbai metro",
+              "Commutix",
               style: TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: 20,
